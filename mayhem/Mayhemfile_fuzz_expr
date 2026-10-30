@@ -1,0 +1,10 @@
+project: savantenvs/vapoursynth
+target: fuzz_expr
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_expr/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_expr
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_expr/fuzz_expr.dict
+    timeout: 30
