@@ -1,0 +1,10 @@
+project: savantenvs/vapoursynth
+target: fuzz_filters
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_filters/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_filters
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_filters/fuzz_filters.dict
+    timeout: 30
